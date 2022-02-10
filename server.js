@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -12,8 +14,8 @@ const {
 
 const { authenticate } = require('./middleware');
 
-const port = 3333;
-const secret = 'mysecret1234';
+const port = process.env.PORT;
+const secret = process.env.SECRET;
 
 const app = express();
 
